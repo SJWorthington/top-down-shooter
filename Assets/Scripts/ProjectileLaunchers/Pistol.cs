@@ -6,6 +6,7 @@ public class Pistol : ProjectileLauncher
 {
     public override void fire(float aimAngle) {
         var bullet = ProjectilePooler.instance.GetProjectile(ProjectileType.StandardBullet);
+        Debug.Log("BulletId = " + bullet.gameObject.GetInstanceID());
         bullet.SetActive(true);
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
         bullet.transform.position = this.transform.position;

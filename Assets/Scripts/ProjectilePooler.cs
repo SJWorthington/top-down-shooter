@@ -20,7 +20,6 @@ public class ProjectilePooler : MonoBehaviour {
     void Start() {
         poolDictionary = new Dictionary<ProjectileType, ProjectilePool>();
         foreach (ProjectilePool pool in poolsList) {
-            Debug.Log("Projectile pool created; " + pool);
             pool.initialisePool(factory);
             poolDictionary.Add(pool.poolObjectType, pool);
         }
