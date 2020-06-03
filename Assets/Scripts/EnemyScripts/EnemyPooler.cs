@@ -19,9 +19,7 @@ public class EnemyPooler : MonoBehaviour {
 
     void Start() {
         poolDictionary = new Dictionary<EnemyType, EnemyPool>();
-        Debug.Log("poolsList size is " + poolsList.Count);
         foreach (EnemyPool pool in poolsList) {
-            Debug.Log("Enemy pool created; " + pool);
             pool.initialisePool(enemyFactory);
             poolDictionary.Add(pool.poolObjectType, pool);
         }
