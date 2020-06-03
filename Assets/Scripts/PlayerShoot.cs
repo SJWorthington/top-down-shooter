@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         var worldMousePosition =
             Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
