@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BulletBarrier
+  - Projectile
   layers:
   - Default
   - TransparentFX
