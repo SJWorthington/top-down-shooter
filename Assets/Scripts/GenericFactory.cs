@@ -13,7 +13,6 @@ public class GenericTypeFactory<T> : MonoBehaviour
 
     private void Awake() {
         for (int i = 0; i < typeList.Count; i++) {
-            Debug.Log("Creating prefab dictionary in genericFactory for " + typeList[i]);
             prefabDictionary.Add(typeList[i], prefabList[i]);
         }
     }

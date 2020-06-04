@@ -7,7 +7,6 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] Transform reticule;
 
     private Vector2 playerPosition;
-    private Vector2 aimDirection;
 
     public ProjectileLauncher projectileLauncher;
     public ProjectileLauncher secondProjectileLauncher;
@@ -36,8 +35,6 @@ public class PlayerShoot : MonoBehaviour
         if (aimAngle < 0f) {
             aimAngle = Mathf.PI * 2 + aimAngle;
         }
-
-        aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
 
         playerPosition = transform.position;
 
