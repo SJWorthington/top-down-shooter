@@ -48,8 +48,6 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-
-
     private void SetCrosshairPosition(float aimAngle) {
         var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
         var y = transform.position.y + 1f * Mathf.Sin(aimAngle);

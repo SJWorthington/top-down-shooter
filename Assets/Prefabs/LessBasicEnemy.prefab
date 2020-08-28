@@ -117,10 +117,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 125942787197927888}
+  collisionDamageToPlayer: 10
+  pointsOnDestroy: 150
+  destroyForScoreTags:
+  - Projectile
+  scoreController: {fileID: 0}
   attackRange: 5
-  launchSpeed: 20
-  chargeTime: 3
-  chargeRotation: 5
+  launchSpeed: 25
+  chargeTime: 1
+  chargeRotation: 10
+  chargeGrowth: 0.01
 --- !u!61 &8250369317978256455
 BoxCollider2D:
   m_ObjectHideFlags: 0
