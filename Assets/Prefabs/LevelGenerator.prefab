@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5035955066505680024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568556931866917684}
+  - component: {fileID: 4130793049492798591}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568556931866917684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035955066505680024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8369659, y: -0.13729763, z: -11.444721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4130793049492798591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035955066505680024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f1784e39aeffb419e2d7eac84165ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  crawlerEnemyPrefab: {fileID: 4301172741689278711, guid: 2229ad5586bb9e5419b54d9aef98233c,
+    type: 3}
+  chargerEnemyPrefab: {fileID: 2597808776654257654, guid: da3e0f86e28eba446a7249f32a62903f,
+    type: 3}
+  spawnPointPrefab: {fileID: 2420987281646164939, guid: c59ef291cb5ae634aa8e70087583169e,
+    type: 3}
+  basicEnemyChance: 0.8
+  worldHeight: 80
+  worldWidth: 80
+  chanceWalkerChangeDir: 0.2
+  chanceWalkerSpawn: 0.2
+  chanceWalkerDestroy: 0.05
+  maxWalkers: 10
+  areaFloorRatio: 0.4
+  wallObject: {fileID: 3221638291805098128, guid: 35a25a6c52891c948b1c2378b37b9416,
+    type: 3}
+  floorObject: {fileID: 2389053360393061481, guid: 8ec9f82673b63664ab5603f926c07ad8,
+    type: 3}
+  chanceOfEnemySpawn: 0.02

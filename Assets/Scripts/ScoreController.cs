@@ -13,7 +13,6 @@ public class ScoreController : MonoBehaviour
         get { return _playerScore; }
         private set {
             _playerScore = value;
-            Debug.Log($"Score is {value}");
             OnScoreChanged?.Invoke(_playerScore);
         }
     }

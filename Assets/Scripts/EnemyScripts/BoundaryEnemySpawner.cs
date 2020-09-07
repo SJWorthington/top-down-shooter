@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class BoundaryEnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Dictionary<EnemyType, GameObject> enemyPrefabMap;
     [SerializeField] private LevelBoundaryManager boundaryManager;
     private LevelBoundaryManager.LevelBoundaries bounds;
-    [SerializeField] ScoreController scoreController;
 
     // Start is called before the first frame update
     void Start()
     {
        bounds = boundaryManager.getLevelBoundaries();
-       InvokeRepeating("spawnEnemy", 0, 1f);
+       //InvokeRepeating("spawnEnemy", 0, 1f);
     }
 
     void spawnEnemy() {
         var randomInt = Random.Range(0, 100);
         GameObject enemy;
         if (randomInt < 50) {
-            enemy = EnemyPooler.instance.GetEnemy(EnemyType.Basic);
+            enemy = EnemyPooler.instance.GetEnemy(EnemyType.Crawler);
         } else {
-            enemy = EnemyPooler.instance.GetEnemy(EnemyType.LessBasic);
+            enemy = EnemyPooler.instance.GetEnemy(EnemyType.Charger);
         }
 
         var x = Random.Range(

@@ -29,12 +29,8 @@ public class LessBasicEnemy : Enemy {
         transform.localScale = originalScale;
     }
 
-    public override void Attack() {
-        throw new System.NotImplementedException();
-    }
-
     internal override void returnToPool() {
-        EnemyPooler.instance.returnToPool(this.gameObject, EnemyType.LessBasic);
+        EnemyPooler.instance.returnToPool(this.gameObject, EnemyType.Charger);
     }
 
     private void FixedUpdate() {

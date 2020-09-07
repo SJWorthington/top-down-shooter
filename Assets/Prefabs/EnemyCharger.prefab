@@ -99,7 +99,7 @@ Rigidbody2D:
   m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f29c97b0618e8b84eb09c155626046ae, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   pointsOnDestroy: 150
   destroyForScoreTags:
   - Projectile
-  scoreController: {fileID: 0}
+  rayCastLayerMaskList: []
   attackRange: 5
   launchSpeed: 25
   chargeTime: 1

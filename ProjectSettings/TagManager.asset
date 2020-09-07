@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Wall
   - Enemy
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Projectile
   - Enemy
   - Player
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -42,6 +43,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 781499817
+    locked: 0
+  - name: Wall
+    uniqueID: 838289553
+    locked: 0
+  - name: Base
+    uniqueID: 789572393
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2237846867
+    locked: 0
+  - name: Enemy
+    uniqueID: 3376851951
+    locked: 0
+  - name: Bullets
+    uniqueID: 3286264981
     locked: 0

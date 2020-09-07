@@ -10,17 +10,15 @@ public class PlayerDash : MonoBehaviour {
     bool isCooling = false;
     private int invincibilityFramesRemaining;
     
-    public void dash(Vector2 currentVelocity, float x, float y) {
-        dashIsAvailable?.Invoke(false);
+    public void dash(float dashAngle) {
+        if (isCooling) return;
+
+        startDashCooldown();
         invincibilityFramesRemaining = invincibilityFrameCount;
         hasDashInvincibility?.Invoke(true);
         Invoke("finishDashCooldown", dashCoolDown);
-        var movementAngle = Mathf.Atan2(y, x);
-        if (movementAngle < 0f) {
-            movementAngle = Mathf.PI * 2 + movementAngle;
-        }
 
-        var dashDirection = Quaternion.Euler(0, 0, movementAngle * Mathf.Rad2Deg) * Vector2.right;
+        var dashDirection = Quaternion.Euler(0, 0, dashAngle * Mathf.Rad2Deg) * Vector2.right;
 
         rigidBody.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
     }
@@ -34,12 +32,15 @@ public class PlayerDash : MonoBehaviour {
         }
     }
 
-    private void postDashInvincibilityFalse() {
-        hasDashInvincibility?.Invoke(false);
+    //Could do this as a Property on isCooling instead
+    private void startDashCooldown() {
+        dashIsAvailable?.Invoke(false);
+        isCooling = true;
     }
 
     private void finishDashCooldown() {
         dashIsAvailable?.Invoke(true);
+        isCooling = false;
     }
 
     public static event Action<bool> hasDashInvincibility;

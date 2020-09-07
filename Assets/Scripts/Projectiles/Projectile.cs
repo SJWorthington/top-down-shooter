@@ -12,13 +12,8 @@ public abstract class Projectile : MonoBehaviour
         Invoke("returnToPool", maxLifetime);
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("BulletBarrier")) {
-            returnToPool();
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision) {
+    protected void OnCollisionEnter2D(Collision2D collision) {
+        //TODO - this is too prescriptive, having to override this is bad
         returnToPool();
     }
 
