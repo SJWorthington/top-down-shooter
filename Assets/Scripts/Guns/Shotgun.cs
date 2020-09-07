@@ -13,7 +13,7 @@ public class Shotgun : ProjectileLauncher {
         setPelletCountOdd();
     }
 
-    public override void fire( float aimAngle) {
+    public override void fire(float aimAngle) {
         if (coolDownTimer < coolDownTime) return;
         coolDownTimer = 0;
         var halfPelletCount = pelletCount / 2;
