@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementVector;
 
+    private BasicTurret turretCarrying = null;
+    private BasicTurret turretInRange = null;
+
     private float aimAngle;
     private float AimAngle {
         get { return aimAngle; }
@@ -52,11 +55,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnPickUpTurret(InputValue value) {
+        if (turretCarrying != null) {
+            turretCarrying.putDown();
+            turretCarrying = null;
+        } else if (turretInRange != null) {
+            turretCarrying = turretInRange;
+            turretInRange.pickUp(this.gameObject);
+        }
+    }
+
     private float angleFromVector(Vector2 vector) {
         var angle = Mathf.Atan2(vector.y, vector.x);
         if (angle < 0f) {
             angle += Mathf.PI * 2;
         }
         return angle;
+    }
+
+    //TODO - this is no good, but temporary
+    //Should check collision type
+    //Can also carry multiple turrets currently
+    private void OnTriggerEnter2D(Collider2D collision) {
+        turretInRange = collision.gameObject.GetComponent<BasicTurret>();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        turretInRange = null;
     }
 }

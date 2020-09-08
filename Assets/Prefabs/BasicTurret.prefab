@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8855896570018364672}
   - component: {fileID: 2301789847625132886}
-  - component: {fileID: 1034925053430711660}
   - component: {fileID: 4705191074329878654}
   m_Layer: 0
   m_Name: BasicTurret
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cb6ac21c39a309e41b61184f61fba657, type: 3}
-  m_Color: {r: 0.0047169924, g: 1, b: 0.9824813, a: 1}
+  m_Color: {r: 1, g: 0.0039215684, b: 0.6943101, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,22 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1034925053430711660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968203106168247056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a2995fd5cd8e44383be14f3ea9da52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretGun: {fileID: 7873903427400690494, guid: f1c72008d7e3e0f4aaccb9a4936c59b6,
-    type: 3}
-  shotFrequency: 0
-  range: 15
 --- !u!58 &4705191074329878654
 CircleCollider2D:
   m_ObjectHideFlags: 0

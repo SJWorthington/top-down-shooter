@@ -57,6 +57,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PickUpTurret"",
+                    ""type"": ""Button"",
+                    ""id"": ""b060fd87-716e-4558-b050-e4f2688509b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -114,6 +122,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e54ece3-150f-4656-a2f2-49c84ec7a2d5"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUpTurret"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +168,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_ShootSecondary = m_Player.FindAction("ShootSecondary", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_PickUpTurret = m_Player.FindAction("PickUpTurret", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -203,6 +223,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_ShootSecondary;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_PickUpTurret;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -212,6 +233,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @ShootSecondary => m_Wrapper.m_Player_ShootSecondary;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @PickUpTurret => m_Wrapper.m_Player_PickUpTurret;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -236,6 +258,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @PickUpTurret.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUpTurret;
+                @PickUpTurret.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUpTurret;
+                @PickUpTurret.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUpTurret;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -255,6 +280,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @PickUpTurret.started += instance.OnPickUpTurret;
+                @PickUpTurret.performed += instance.OnPickUpTurret;
+                @PickUpTurret.canceled += instance.OnPickUpTurret;
             }
         }
     }
@@ -284,5 +312,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnShootSecondary(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnPickUpTurret(InputAction.CallbackContext context);
     }
 }

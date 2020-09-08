@@ -7,9 +7,8 @@ using Random = UnityEngine.Random;
 
 public class LevelGenerator : MonoBehaviour {
 
-    //TODO - this shouldn't be here, just a shortcut for sorting pathfinding. 
     [SerializeField] Transform playerTransform;
-    [SerializeField] Transform homeBase;
+    [SerializeField] Transform homeBaseTransform;
 
     [SerializeField] GameObject crawlerEnemyPrefab;
     [SerializeField] GameObject chargerEnemyPrefab;
@@ -84,6 +83,21 @@ public class LevelGenerator : MonoBehaviour {
                 grid[x, y] = gridSpace.empty;
             }
         }
+
+        var halfWidth = roomWidth / 2;
+        var halfHeight = roomHeight / 2;
+        grid[halfWidth, halfHeight] = gridSpace.floor;
+
+        for (int x = halfWidth - 2; x <= halfWidth + 2; x++) {
+            for (int y = halfHeight - 2; y <= halfHeight + 2; y++) {
+                grid[x, y] = gridSpace.floor;
+            }
+        }
+
+        //TODO - this needs to be made nicer
+        var midPoint = convertGridPositionToWorld(halfWidth, halfHeight);
+        homeBaseTransform.position = midPoint;
+        playerTransform.position = midPoint;
 
         walkers = new List<Walker>();
 

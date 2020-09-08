@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b1faf3325099046bd3d6bf1c00f44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnFrequency: 10
+  spawnFrequency: 1.5
 --- !u!212 &2119613173459518215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f6306d106b420024fad195c53895b9ee, type: 3}
-  m_Color: {r: 0.9449198, g: 0.990566, b: 0, a: 1}
+  m_Color: {r: 0.99215686, g: 0.2111253, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
